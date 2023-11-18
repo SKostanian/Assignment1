@@ -1,0 +1,148 @@
+/* Universal selector */
+* {
+    /* Setting padding and margin to 0 for all elements
+       Sometimes the browser will apply it's default margin/padding to elements */
+    margin: 0;
+    padding: 0;
+    /* Box sizing property allows us to include the padding and border in an element's total width and height,
+       url: https://www.w3schools.com/csS/css3_box-sizing.asp */
+    box-sizing: border-box;
+}
+ul {
+    /* No list style */
+    list-style: none;
+}
+
+/*  Header selector by class.
+    Using the flex method, url: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+    1. When applying display: flex - elements are aligned horizontally (flex-direction: row - by default)
+    2. align-items: center - aligns vertically the elements to the center of the horizontal axis
+*/
+.header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 60px;
+    background-color: #BE1622;
+    color: #fff;
+    height: 130px;
+}
+/* Size of the Uclan logo */
+.header__logo {
+    width: 200px;
+    height: auto;
+}
+/* Styling the Student Shop name
+   flex: 1 1 auto - abbreviated notation of the following styles
+*/
+.header__name-container {
+    flex: 1 1 auto;
+    font-weight: bold;
+    font-size: 26px;
+}
+/* Set the element to 100% height.
+   If the height is a percentage, it is calculated relative to the element's parent,
+   that's why in the styles above the parent of this element also has a height of 100%.
+*/
+.header__menu-container {
+    height: 100%;
+}
+
+/* With flex, we align the elements horizontally and align them to the top edge of the horizontal axis
+   (align-items: flex-start)
+*/
+.base-menu {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Selector by nested element.
+   So in .base-menu we find all li and in each we find all a links
+*/
+.base-menu > li > a {
+    color: #fff;
+    /* Removing the underline */
+    text-decoration: none;
+    font-size: 16px;
+}
+/* Hover pseudo-class. When user points on a menu it changes color */
+.base-menu > li > a:hover {
+    color: #007FB0;
+}
+/* Styling the burger icon */
+.header__menu-burger {
+    width: 20px;
+    height: 20px;
+    font-size: 40px;
+    color: #000;
+    display: none;
+}
+
+/* Hidden navigational menu styled */
+.mobile__menu {
+    background-color:  #34516C;
+    width: 100%;
+    padding: 20px 40px;
+}
+
+/* A class for hiding elements to use them in conjunction with JS */
+.hidden {
+    display: none;
+}
+
+/* @media rule. (url: https://www.w3schools.com/cssref/css3_pr_mediaquery.php)
+   When the browser screen width is 768px or less we block our burger icon inline and hide the menu
+   It lets to access the navigational menu on small screens easily(i.e on tablets, mobile phones).
+*/
+@media screen and (max-width: 768px) {
+    .header__menu-burger {
+        display: block;
+    }
+    /* hiding the navigational menu */
+    .header__menu {
+        display: none;
+    }
+}
+/* Styling the heading in the main */
+h1 {
+    text-align: center;
+    color: #577A9B;
+    font-size: 42px;
+}
+/* Styling the welcome message */
+.Welcome {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 20px;
+}
+/* Styling the videos */
+main iframe {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    border: 0;
+}
+/* Styling the main */
+main {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+/* Footer styling */
+footer {
+    color: #fff;
+    background-color: #34516C;
+    padding: 15px;
+    display: flex;
+    gap: 20%;
+}
+/* Displaying the footer content as 3 columns using flex */
+.footer__column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
