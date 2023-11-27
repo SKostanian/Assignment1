@@ -1,15 +1,19 @@
+/* Styling the filter class */
 .filter {
     display: flex;
     gap: 20px;
 }
+/* Styling each filter, adding underline */
 .filter_item {
     cursor: pointer;
     color: #007FB0;
     text-decoration: underline;
 }
+/* When user points on filters, underline is gone */
 .filter_item:hover{
     text-decoration: none;
 }
+/* Styling the products class */
 .products {
     display: flex;
     gap: 15px;
@@ -17,32 +21,53 @@
     padding: 0 10px;
     margin-top: 20px;
 }
+/* Styling each product card */
 .product {
-    border: 1px solid gray;
+    border: 1px solid #34516C;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    height: 300px;
     width: 250px;
 }
+/* Styling the product cover */
 .product-cover {
     height: 150px;
-
+    display: flex;
+    justify-content: center; /* horizontal axis x */
+    min-height: 150px;
 }
+/* Styling the image of a product inside the cover */
+.product-cover img {
+    width: auto;
+    height: 100%;
+}
+/* Styling the product description class */
 .product-description {
     height: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: lightgray;
+    background-color: #C7CBDA;
     padding: 15px;
     align-items: flex-start;
 }
-.product-description p {
-    margin: 0;
-
-}
-.products-description button {
+/* Placing the button on centre with margin and padding */
+.product-description button {
     margin: 0 auto;
-
+    padding: 2px 4px;
+}
+/* Styling the top button which lets user reach the top of the page quickly */
+.button-to-top {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: #34516C;
+    text-decoration: none;
 }
