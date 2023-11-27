@@ -1,93 +1,97 @@
+<!-- HTML-5 document declaration -->
 <!DOCTYPE html>
-<html lang="ru">
+<!-- HTML tag, english language code -->
+<html lang="en">
+<!-- Head element, container for metadata (data about data) -->
 <head>
+    <!-- UTF-8 encoding the HTML document -->
     <meta charset="UTF-8">
+    <!-- Setting the Viewport, url: https://www.w3schools.com/css/css_rwd_viewport.asp -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Products page title -->
     <title>Products</title>
+    <!-- Reference to the external css stylesheet -->
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/products.css">
 </head>
+<!-- Body element, containing all the content -->
 <body>
-<header class="header">
-    <div class="header__logo-container">
-        <img class="header__logo" src="./assets/images/Uclan_logo.png" alt="">
-    </div>
-    <div class="header__name-container">
-        Student Shop
-    </div>
-    <nav class="header__menu-container">
-        <ul class="header__menu base-menu">
+    <!-- Header element -->
+    <header class="header">
+        <!-- Uclan logo image -->
+        <div class="header__logo-container">
+            <img class="header__logo" src="assets/images/Uclan_logo.png" alt="">
+        </div>
+        <!-- Student shop name -->
+        <div class="header__name-container">
+            Student Shop
+        </div>
+        <!-- Creating the navigational menu -->
+        <nav class="header__menu-container">
+            <!-- List with references to the 3 pages, Home page, products and cart -->
+            <ul class="header__menu base-menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./products.html">Products</a></li>
+                <li>
+                    <a href="./cart.html">Cart</a>
+                </li>
+            </ul>
+            <!-- Burger icon -->
+            <div class="header__menu-burger">☰</div>
+        </nav>
+    </header>
+    <!-- Creating the hidden navigational menu, locates after the header and responsive for a click -->
+    <nav class="mobile__menu hidden">
+        <ul class="base-menu">
+            <!-- With the same list syntax as above menu but without showing the burger icon -->
             <li><a href="./index.html">Home</a></li>
             <li><a href="./products.html">Products</a></li>
             <li>
                 <a href="./cart.html">Cart</a>
             </li>
         </ul>
-        <div class="header__menu-burger">☰</div>
     </nav>
-</header>
-<nav class="mobile__menu hidden">
-    <ul class="base-menu">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./products.html">Products</a></li>
-        <li>
-            <a href="./cart.html">Cart</a>
-        </li>
-    </ul>
-</nav>
-<main>
-    <div class="filter">
+    <!-- Main element with catalogue of clothes and their filtering -->
+    <main>
+        <!-- Filter class -->
+        <div class="filter">
         <span>
             products>
         </span>
-        <span id="tshirts" class="filter_item">
-            t-shirts
-        </span>
-        <span id="hoodies" class="filter_item">
-            hoodies
-        </span>
-        <span id="jumpers" class="filter_item">
-            jumpers
-        </span>
-    </div>
-    <div class="products">
-        <div class="product">
-            <div class="product-cover">
-
-            </div>
-            <div class="product-description">
-                <h2>Title</h2>
-                <p>Description <a href="item.html">Read More</a></p>
-                <b>Price</b>
-                <button>Buy</button>
+            <!-- References to each item, letting the user filter the catalogue -->
+            <a class="filter_item" href="#UCLan_Logo_Tshirt">t-shirts</a>
+            <a class="filter_item" href="#UCLan_Hoodie">hoodies</a>
+            <a class="filter_item" href="#UCLan_Logo_Jumper">jumpers</a>
+        </div>
+        <div class="products">
+        </div>
+        <!-- Button on top which lets user reach the top of the page quickly -->
+        <a href="#top" class="button-to-top">top</a>
+    </main>
+    <!-- Footer element displayed at the bottom of the page -->
+    <footer>
+        <div class="footer__column">
+            <h3>Links</h3>
+            <!-- Link to the Uclan Cyprus university -->
+            <a href="https://www.uclancyprus.ac.cy/">Uclan Cyprus</a>
+            <!-- Link to my GitHub -->
+            <a href="https://github.com/SKostanian/Assignment1">GitHub</a>
+        </div>
+        <div class="footer__column">
+            <h3>Contact</h3>
+            <!-- My Uclan email -->
+            <p>Email: SKostanian@uclan.ac.uk</p>
+        </div>
+        <div class="footer__column">
+            <h3>Location</h3>
+            <!-- Location of the Uclan Cyprus -->
+            <div>
+                <p>12 – 14 University Avenue Pyla, 7080 Larnaka, Cyprus</p>
             </div>
         </div>
-    </div>
-</main>
-<!-- Footer element displayed at the bottom of the page -->
-<footer>
-    <div class="footer__column">
-        <h3>Links</h3>
-        <!-- Link to the Uclan Cyprus university -->
-        <a href="https://www.uclancyprus.ac.cy/">Uclan Cyprus</a>
-        <!-- Link to my GitHub -->
-        <a href="https://github.com/SKostanian/Assignment1">GitHub</a>
-    </div>
-    <div class="footer__column">
-        <h3>Contact</h3>
-        <!-- My Uclan email -->
-        <p>Email: SKostanian@uclan.ac.uk</p>
-    </div>
-    <div class="footer__column">
-        <h3>Location</h3>
-        <!-- Location of the Uclan Cyprus -->
-        <div>
-            <p>12 – 14 University Avenue Pyla, 7080 Larnaka, Cyprus</p>
-        </div>
-    </div>
-</footer>
-
-<script src="./scripts/index.js"></script>
-<script src="./scripts/products.js"></script>
+    </footer>
+    <!-- External js scripts for the page -->
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/products.js"></script>
 </body>
 </html>
