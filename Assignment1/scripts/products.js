@@ -1,3 +1,4 @@
+// Huge products array
 const products = [
     ['UCLan Hoodie','Purple','cotton authentic character and practicality are combined in this comfy  warm and luxury hoodie for students that goes with everything to create casual looks',' Only Ј39.99','images/items/hoodies/hoodie (1).jpg'],
     ['UCLan Hoodie','Light Blue','cotton authentic character and practicality are combined in this comfy  warm and luxury hoodie for students that goes with everything to create casual looks',' Only Ј39.99','images/items/hoodies/hoodie (2).jpg'],
@@ -109,8 +110,7 @@ const products = [
     ['UCLan Logo Tshirt','Teal Blue','cotton authentic character and practicality are combined in this summery t-shirt for students that goes with everything to create casual looks. Perfect for those summer days',' Only Ј19.99','images/items/tshirts/tshirt (34).jpg'],
     ['UCLan Logo Tshirt','White','cotton authentic character and practicality are combined in this summery t-shirt for students that goes with everything to create casual looks. Perfect for those summer days',' Only Ј19.99','images/items/tshirts/tshirt (35).jpg']
 ]
-
-// Create product function which creates the whole product card step-by-step
+// Create product function which creates the whole product card step-by-stp
 function createProduct({item, id, index}){
 
     const title = `${item[0]} - ${item[1]}`;
@@ -125,7 +125,7 @@ function createProduct({item, id, index}){
     if (id) product.id = id;
 
     const productCover =  document.createElement('div');
-    productCover.className = 'product-cover'; // clear for now
+    productCover.className = 'product-cover';
     const productDescription = document.createElement('div');
     productDescription.className = 'product-description';
 
@@ -141,10 +141,14 @@ function createProduct({item, id, index}){
     elPrice.textContent = price;
     const elBuy = document.createElement('button');
     elBuy.textContent = "Buy";
+    elBuy.addEventListener('click', function(){
+        addToCart(item);
+    })
     const elLink = document.createElement('a');
     elLink.textContent = "Read More";
     elLink.href = "item.html";
 
+    /* Adding the click listener which set the product item into the Session storage */
     elLink.addEventListener('click', function(event){
         event.preventDefault();
         sessionStorage.setItem('product', JSON.stringify(item));
@@ -166,33 +170,34 @@ function createId(text) {
     // global - find all the spaces in a text, replace it with character: _
     return text.replace(/ /g, '_');
 }
+
+// Display all products on the product page
 function renderingProducts(){
 
     const productsWrapper = document.querySelector('.products');
 
     if (productsWrapper){
-        const productItems = productsWrapper.querySelectorAll('.product');
-        if (productItems){
-            productItems.forEach(function (item){
-                item.remove();
-            })
-        }
-
+        // Search all our products in the products array
         products.forEach((item, index)=>{
 
             let id = null;
+            // Assign an id to the first item in the category
             if (index == 0) {
+                // id is unique, you only need one id to move between product categories
                 id = createId(item[0]);
             } else {
+                // if the index is not the first item
+                // compare the category of the current product with the category of the previous product
                 if (item[0] !== products[index - 1][0]) id = createId(item[0]);
             }
-
+            // the product is created with a picture, description, etc.
             const product = createProduct({item, id, index});
+            // adding a product to the product block
             productsWrapper.appendChild(product);
         })
     }
 }
-
+// Onload function to render the products
 window.onload = function (){
     renderingProducts();
 }
