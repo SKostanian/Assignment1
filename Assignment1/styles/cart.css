@@ -1,0 +1,27 @@
+/* Table styling */
+table {
+    width: 100%;
+}
+/* Table styling the th and td text on the left  */
+table th {
+    text-align: left;
+}
+table td {
+    text-align: left;
+}
+/* Specify a number for a cell in a table row with nth-child
+   url: https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child
+   Second child is the picture */
+table td:nth-child(2) {
+    text-align: center;
+}
+/* Third child is the product title */
+table td:nth-child(3) {
+    font-weight: bold;
+    font-size: 18px;
+}
+/* Styling the image inside of td */
+td > img {
+    width: 50px;
+    height: auto;
+}
