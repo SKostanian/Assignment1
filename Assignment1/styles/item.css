@@ -1,0 +1,36 @@
+/* Styling the product class */
+.product {
+    border: 1px solid #919CAD;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+/* Styling the product cover */
+.product-cover {
+    display: flex;
+    justify-content: center; /* justifying on horizontal axis x */
+}
+/* Styling the photo of the product cover */
+.product-cover img {
+    width: 100%;
+}
+/* Styling the product description */
+.product-description {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #C7CBDA;
+    padding: 15px;
+    align-items: flex-start;
+}
+/* Styling the product description paragraph */
+.product-description p {
+    margin: 0;
+}
+/* Styling the product description button */
+.product-description button {
+    margin: 0 auto;
+    padding: 2px 4px;
+}
