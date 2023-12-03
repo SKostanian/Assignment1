@@ -1,0 +1,118 @@
+<!-- HTML-5 document declaration -->
+<!DOCTYPE html>
+<!-- HTML tag, english language code -->
+<html lang="en">
+<!-- Head element, container for metadata (data about data) -->
+<head>
+    <!-- UTF-8 encoding the HTML document -->
+    <meta charset="UTF-8">
+    <!-- Setting the Viewport, url: https://www.w3schools.com/css/css_rwd_viewport.asp -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Home page title -->
+    <title>Cart</title>
+    <!-- Reference to the external css stylesheet -->
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/cart.css">
+</head>
+<!-- Body element, containing all the content -->
+<body>
+    <!-- Header element -->
+    <header class="header">
+        <!-- Uclan logo image -->
+        <div class="header__logo-container">
+          <img class="header__logo" src="assets/images/Uclan_logo.png" alt="">
+        </div>
+        <!-- Student shop name -->
+        <div class="header__name-container">
+          Student Shop
+        </div>
+        <!-- Creating the navigational menu -->
+        <nav class="header__menu-container">
+          <!-- List with references to the 3 pages, Home page, products and cart -->
+            <ul class="header__menu base-menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./products.html">Products</a></li>
+                <li>
+                  <a href="./cart.html">Cart</a>
+                </li>
+            </ul>
+          <!-- Burger icon -->
+          <div class="header__menu-burger">☰</div>
+        </nav>
+    </header>
+    <!-- Creating the hidden navigational menu, locates after the header and responsive for a click -->
+    <nav class="mobile__menu hidden">
+      <ul class="base-menu">
+        <!-- With the same list syntax as above menu but without showing the burger icon -->
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./products.html">Products</a></li>
+        <li>
+          <a href="./cart.html">Cart</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Main element with a cart implementation -->
+    <main>
+        <!-- Small description of what is implemented on this page -->
+        <h2>Shopping Cart</h2>
+        <p>The items you've added to the Shopping Cart</p>
+        <!-- Creating the table -->
+        <table>
+            <!-- Thead tag which holds a row for Item and Product -->
+            <thead>
+            <tr>
+              <!-- The colspan attribute defines the number of columns a cell should span.
+               url: https://www.w3schools.com/tags/att_td_colspan.asp -->
+              <th colspan="2">Item</th>
+              <th colspan="2">Product</th>
+            </tr>
+            </thead>
+            <!-- Tbody tag which holds 2 rows, each of them has the 4 data cells -->
+            <tbody>
+            <tr>
+              <!-- Data for index of item -->
+              <td>1</td>
+              <!-- Data for item picture and color of item -->
+              <td><img src="./images/items/hoodies/hoodie%20(1).jpg"><p>Color</p> </td>
+              <!-- Data for product title -->
+              <td>Product</td>
+              <!-- Data for the price of item -->
+              <td>Price</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </main>
+    <!-- Footer element displayed at the bottom of the page -->
+    <footer>
+        <div class="footer__column">
+            <h3>Links</h3>
+            <!-- Link to the Uclan Cyprus university -->
+            <a href="https://www.uclancyprus.ac.cy/">Uclan Cyprus</a>
+            <!-- Link to my GitHub -->
+            <a href="https://github.com/SKostanian/Assignment1">GitHub</a>
+        </div>
+        <div class="footer__column">
+            <h3>Contact</h3>
+            <!-- My Uclan email -->
+            <p>Email: SKostanian@uclan.ac.uk</p>
+        </div>
+        <div class="footer__column">
+            <h3>Location</h3>
+            <!-- Location of the Uclan Cyprus -->
+            <div>
+              <p>12 – 14 University Avenue Pyla, 7080 Larnaka, Cyprus</p>
+            </div>
+        </div>
+    </footer>
+    <!-- External js script for the page -->
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/products.js"></script>
+    <script src="scripts/addToCart.js"></script>
+</body>
+</html>
